@@ -15,6 +15,7 @@ import com.github.yajatkaul.mega_showdown.api.lilycobble.networking.battle.Battl
 import com.github.yajatkaul.mega_showdown.api.lilycobble.networking.battle.BattleSideState;
 import com.github.yajatkaul.mega_showdown.api.lilycobble.networking.battle.BattleStatePacketS2C;
 import com.github.yajatkaul.mega_showdown.client.battle.storage.BattlePokemonMemory;
+import com.github.yajatkaul.mega_showdown.config.MegaShowdownConfig;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -465,7 +466,7 @@ public class BattleHud {
 
     public static void drawStatChanges (GuiGraphics context, ActiveClientBattlePokemon pokemon, boolean isLeft, int rank, boolean isCompact) {
         BattlePokemonMemory mem = getMemory(pokemon);
-        if (mem == null) return;
+        if (!MegaShowdownConfig.showStatChanges || mem == null) return;
 
         StatChangeRenderer.render(context, mem, isLeft, rank, isCompact);
     }

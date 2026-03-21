@@ -1,6 +1,7 @@
 package com.github.yajatkaul.mega_showdown.client.battle.hud;
 
 import com.github.yajatkaul.mega_showdown.MegaShowdown;
+import com.github.yajatkaul.mega_showdown.config.MegaShowdownConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
@@ -30,7 +31,7 @@ public class TeamPreviewWidget extends AbstractWidget {
 
     @Override
     protected void renderWidget (GuiGraphics context, int mouseX, int mouseY, float delta) {
-        if (this.party.isEmpty()) return;
+        if (!MegaShowdownConfig.showBattleHUD || this.party.isEmpty()) return;
 
         context.blit(isLeft ? TOP_LEFT_BORDER : TOP_RIGHT_BORDER, this.getX(), this.getY(), 0, 0, WIDTH, BORDER_HEIGHT, WIDTH, BORDER_HEIGHT);
         this.party.forEach(widget -> widget.render(context, mouseX, mouseY, delta));
