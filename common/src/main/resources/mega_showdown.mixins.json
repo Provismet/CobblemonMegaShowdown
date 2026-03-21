@@ -13,6 +13,7 @@
         "client.LivingEntityRendererMixin",
         "client.ModeBakeryMixin",
         "client.PokemonRendererMixin",
+        "client.ui.MoveTileMixin",
         "client.ui.PCGUIMixin",
         "client.ui.SummaryCompanionMixin",
         "client.ui.SummaryMixin",
